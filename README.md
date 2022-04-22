@@ -24,7 +24,7 @@ curl --location --request POST 'http://localhost:8080/realms/demo/protocol/openi
 --data-urlencode 'grant_type=client_credentials'
 ```
 
-## WebApiSample
+## WebApiSample (client_credentials)
 
 This app has one action requiring scope authorization.
 
@@ -35,3 +35,16 @@ GET /weatherforecast
 Required scope `read:weatherforecast`
 
 > client-one already has this scope
+
+## SPA Sample
+
+Open https://www.keycloak.org/app/ and setup:
+
+
+```
+url: http://localhost:8080
+realm: demo
+client: spa-demo
+```
+
+Now you can click Sign in to authenticate to this application using the Keycloak server you started earlier.

@@ -41,7 +41,6 @@ namespace WebApiSample
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("read:weatherforecast", policy => policy.Requirements.Add(new HasScopeRequirement("read:weatherforecast")));
-
             });
 
             services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
