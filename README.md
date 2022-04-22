@@ -23,3 +23,15 @@ curl --location --request POST 'http://localhost:8080/realms/demo/protocol/openi
 --data-urlencode 'client_secret=[secret here]' \
 --data-urlencode 'grant_type=client_credentials'
 ```
+
+## WebApiSample
+
+This app has one action requiring scope authorization.
+
+```
+GET /weatherforecast
+```
+
+Required scope `read:weatherforecast`
+
+> client-one already has this scope
