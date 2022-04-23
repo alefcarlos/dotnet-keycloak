@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WebApiSample.Controllers
+namespace WebApiScopedBased.Controllers
 {
     [ApiController]
     [Route("[controller]")]

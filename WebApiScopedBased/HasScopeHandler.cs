@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApiSample
+namespace WebApiScopedBased
 {
     public class HasScopeHandler : AuthorizationHandler<HasScopeRequirement>
     {

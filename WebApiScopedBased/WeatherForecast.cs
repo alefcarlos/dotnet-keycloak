@@ -1,6 +1,6 @@
 using System;
 
-namespace WebApiSample
+namespace WebApiScopedBased
 {
     public class WeatherForecast
     {

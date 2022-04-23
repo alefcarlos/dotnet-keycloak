@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using System;
 
-namespace WebApiSample
+namespace WebApiScopedBased
 {
     public class HasScopeRequirement : IAuthorizationRequirement
     {
