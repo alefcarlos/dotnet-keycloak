@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "d198958d-0dd2-46fb-8a9a-3a91705a501d",
+		"name": "keycloak-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "keycloak",
+			"item": [
+				{
+					"name": "Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "client-one",
+									"type": "default"
+								},
+								{
+									"key": "client_secret",
+									"value": "0f2Ki924S8eFOUhQSzU22GGnZ2F7jc7i",
+									"type": "default"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/realms/demo/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"demo",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "webapi",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICItSEE4QUExRy1kdGdjeXFNMUthbHloNGh2eXZ5YlV4N25xYTM1UGRCUWswIn0.eyJleHAiOjE2NTA1OTMyNDYsImlhdCI6MTY1MDU5Mjk0NiwianRpIjoiMWJhOTY3MDUtYjAxOC00MjgzLWIxMDQtMDNkNWVhY2YwYzRmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9kZW1vIiwiYXVkIjoiYXBwLWRlbW8iLCJzdWIiOiJlZjNkYWQ3ZC0yZDQ2LTRjZTQtOWE2Mi04YTYzZDJhNGVjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnQtb25lIiwiYWNyIjoiMSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY2xpZW50SWQiOiJjbGllbnQtb25lIiwiY2xpZW50SG9zdCI6IjE3Mi4xOC4wLjEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtY2xpZW50LW9uZSIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTguMC4xIn0.pkL25yb6jdu9NZhUuHnbnDMMfDb3wumJOol71AeBWHvLt5ujHHMP--9IrRXgcoHP_LjTXtw7IkxMUYWx8rS8f0gVEjwupm3XJNNkhXGxC9SrxPXGU4KgiAtVXPL4T3P8se4VgQFGWuLhMWCU8BGCF66OeNw2sxZ4ZJYxwf597gkkYeVtNsp0_y2zpg42Oi5to7L5UnQepI31-RDZSJXzc2paDDuJ4Yba_YXWnNa8qbgoiE7Fftu9XbxwuHyoAqsFQ74GpV6-v6ur0eVz8fqV3VZzAa-4Oe8aXEJcS0gWkJkNvnZ3I_RseLBclp4ZKYmgcyZwrNVTxaoOgwxqoi5wmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/weatherforecast",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"weatherforecast"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
