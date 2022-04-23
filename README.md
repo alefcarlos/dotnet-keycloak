@@ -10,9 +10,23 @@ An instance of latest Keycloak will be available on `http://localhost:8080`
 
 Create a new `realm` with name `demo` importing the file `realm-export.json`.
 
-## WebApiSample (client_credentials)
+## WebApiRoleBased (Code Authorization)
 
-This app has one action requiring scope authorization.
+```
+GET /weatherforecast
+```
+
+Required role `CommonUser`
+
+```
+POST /weatherforecast
+```
+
+Required role `Admin`
+
+> webapi1 folder on Postman collection has the two requests already configured
+
+## WebApiSample (Client Credentials Authorization)
 
 ```
 GET /weatherforecast
@@ -20,21 +34,25 @@ GET /weatherforecast
 
 Required scope `read:weatherforecast`
 
+```
+POST /weatherforecast
+```
+
+Required scope `write:weatherforecast`
+
 ### Configure client secret
 
-A client `client-one` is created, but it needs a secret, go to `Clients > client-one > Credentials` to generate.
+A client `webapp1` is created, but it needs a secret, go to `Clients > webapi1 > Credentials` to generate.
 
 ### Generate access token
 
 ```curl
 curl --location --request POST 'http://localhost:8080/realms/demo/protocol/openid-connect/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'client_id=client-one' \
+--data-urlencode 'client_id=webapi1' \
 --data-urlencode 'client_secret=[secret here]' \
 --data-urlencode 'grant_type=client_credentials'
 ```
-
-> client-one already has this scope
 
 ## SPA Sample
 
